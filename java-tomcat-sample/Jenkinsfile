@@ -9,10 +9,12 @@ pipeline {
                 success {
                     echo "Now Archiving the Artifacts...."
                     archiveArtifacts artifacts: '**/*.war'
-                    
                     }
                 }
-            }
+         stage('Deploy in staging environment') {
+            steps {
+                build job: 'Deploy_Application_staging_env'
+            }     
         }
-    }
-
+    }  
+}
