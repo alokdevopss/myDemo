@@ -1,16 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
 pipeline {
     agent any
     stages {
@@ -28,5 +15,5 @@ pipeline {
                 build job: 'Deploy_Application_staging_env'
             }
         }
-
+    }
 }
