@@ -9,13 +9,14 @@ pipeline {
                 success {
                     echo "Now Archiving the Artifacts...."
                     archiveArtifacts artifacts: '**/*.war'
-                    }
-                }   
-             steps {
-                sh 'mvn -f java-tomcat-sample/pom.xml clean package'
+                    
                     }
                 }
+                stage('Build Application') {
+            steps {
+                sh 'mvn -f java-tomcat-sample/pom.xml clean package'
+            }
             }
         }
-    
+    }
 
